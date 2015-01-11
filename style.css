@@ -1,0 +1,417 @@
+
+html {
+    padding:0;
+    margin:0;
+    overflow-y:scroll;
+    overflow-x:hidden
+}
+
+body {
+    margin:0;
+    padding:0
+}
+
+p {
+margin: 7px 0 3px;
+}
+
+hr{
+    border-top: 1px dotted #222;
+    padding:0px;
+    margin:5px 0px 15px;
+    color: #fff;
+    height: 1px;
+    width:100%;
+}
+hr.tight{
+    margin:5px 0px 8px;
+}
+
+label {
+    color:#fff;
+    font-weight:400;
+    margin-bottom: 0px;
+    font-size:12px;
+}
+
+.loader {
+    position: fixed;
+    left: 0px;
+    top: 0px;
+    width: 100%;
+    height: 100%;
+    z-index: 9999;
+    background: rgba(249,249,249,1);
+    text-align: center;
+}
+
+.details{
+    top:100px;
+}
+
+i.fa-spin {
+    text-align: center;
+    font-size: 48px;
+}
+
+.categories{
+    padding-top:0px;
+}
+
+#map {
+    margin-top:50px;
+    width:100%;
+    height:85%;
+}
+
+#footer {
+    position: fixed;
+    height: 180px;
+    left:0;
+    bottom: 0;
+    width: 100%;
+    background:#222;
+    border-top:solid 1px #fff;
+}
+
+#footer p{
+    color:white;
+    text-align:center;
+}
+
+.navbar-fixed-top,.navbar-fixed-bottom {
+    position:fixed;
+    right:0;
+    left:0;
+    z-index:1000
+}
+
+.SvgOverlay,.SvgOverlay svg {
+    position:absolute;
+    top:0;
+    left:0
+}
+
+.SvgOverlay svg {
+    position:absolute;
+    top:-4000px;
+    left:-4000px;
+    width:8000px;
+    height:8000px
+}
+
+.SvgOverlay path {
+    stroke:#000;
+    stroke-width:0;
+    fill:Orange;
+    fill-opacity:.8
+}
+
+.bottomBar {
+    position:relative;
+    width:100%;
+    height:820px;
+    background-color:rgba(50,50,50,1)
+}
+
+.navbar-default {
+    background-color:rgba(50,50,50,1);
+    border-left:solid 0 #000;
+}
+
+div.sideBar {
+    width:270px;
+    height:280px;
+    background-color:rgba(255,255,255,1);
+    position:fixed;
+    top:80px;
+    right:0;
+   border-left:solid 1px #000;
+    border-top:solid 1px #000;
+    border-bottom:solid 1px #000;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+    padding:20px;
+    color:#222;
+    -webkit-box-shadow: 10px 10px 65px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 65px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 65px 0px rgba(0,0,0,0.75);
+}
+
+.legend {
+    width:270px;
+    height:110px;
+    background-color:rgba(255,255,255,1);
+    position:fixed;
+    top:380px;
+    right:0;
+   border-left:solid 1px #000;
+    border-top:solid 1px #000;
+    border-bottom:solid 1px #000;
+    border-top-left-radius:5px;
+    border-bottom-left-radius:5px;
+    padding:10px 20px 10px 20px;
+    -webkit-box-shadow: 10px 10px 65px 0px rgba(0,0,0,0.75);
+-moz-box-shadow: 10px 10px 65px 0px rgba(0,0,0,0.75);
+box-shadow: 10px 10px 65px 0px rgba(0,0,0,0.75);
+}
+
+div.title {
+    font-size:14px;
+    color:#222;
+    font-weight:400;
+    display:inline;
+}
+
+div.ward {
+    font-size:14px;
+    color:#222;
+    font-weight:400;
+    display:inline;
+}
+
+.navbar-fixed-top {
+    padding-left:0;
+    padding-right:0
+}
+
+.col-sm-12 {
+    padding:0
+}
+
+.navbar-default .navbar-brand {
+color: #fff;
+letter-spacing: 2px;
+}
+ .right{
+    float:right;
+ }
+
+.voteChart {
+    width:100%;
+    height:28px;
+    color:#000;
+    border-radius:5px
+}
+
+.voteChart text {
+    fill:#fff;
+    font:10px sans-serif;
+    text-anchor:end
+}
+.subdivisionChart {
+    width:100%;
+    height:45px;
+    color:#000;
+    border-radius:5px
+}
+
+.subdivisionChart text {
+    fill:#fff;
+    font:10px sans-serif;
+    text-anchor:end
+}
+.cityChart {
+    width:100%;
+    height:28px;
+    color:#000;
+    border-radius:5px
+}
+
+.cityChart text {
+    fill:#fff;
+    font:10px sans-serif;
+    text-anchor:end
+}
+
+#education {
+    width:100%;
+    height:170px;
+    color:#000;
+    border-radius:5px
+}
+
+#education text {
+    fill:#fff;
+    font:10px sans-serif;
+    text-anchor:end
+}
+
+#religion {
+    width:100%;
+    height:170px;
+    color:#000;
+    border-radius:5px
+}
+
+#religion text {
+    fill:#fff;
+    font:10px sans-serif;
+    text-anchor:end
+}
+
+#income {
+    width:100%;
+    height:170px;
+    color:#000;
+    border-radius:5px
+}
+
+#income text {
+    fill:#fff;
+    font:10px sans-serif;
+    text-anchor:end
+}
+
+#immigration {
+    width:100%;
+    height:170px;
+    color:#000;
+}
+
+#immigration text {
+    fill:#fff;
+    font:10px sans-serif;
+    text-anchor:end
+}
+
+.peity{
+
+    width:80;
+    height:80;
+    display: block;
+    margin:20px auto 0px;
+}
+
+#occupation {
+    width:100%;
+    height:170px;
+    color:#000;
+    border-radius:5px
+}
+
+#occupation text {
+    fill:#fff;
+    font:10px sans-serif;
+    text-anchor:end
+}
+
+#transportation {
+    width:100%;
+    height:170px;
+    color:#000;
+    border-radius:5px
+}
+
+#transportation text {
+    fill:#fff;
+    font:10px sans-serif;
+    text-anchor:end
+}
+
+.title {
+    height:25px
+}
+
+.ward {
+    height:30px
+}
+
+text.barText {
+    fill:#222;
+    color:#222;
+    text-anchor:start;
+}
+
+.bar text {
+    fill:#222;
+    color:#222;
+}
+
+path {
+
+}
+
+.axis text{
+    fill:#222;
+}
+.axis path,.axis line {
+    fill:none;
+    stroke:grey;
+    stroke-width:1px;
+    shape-rendering:crispEdges;
+}
+
+.wardNumber {
+    pointer-events:none
+}
+
+.wardBoundaries {
+    pointer-events:none
+}
+
+
+
+#footer i.fa{
+    color:#999;
+    font-size:32px;
+    margin-top:10px;
+    display:inline-block;
+    padding-right:20px;
+    text-align:center;
+}
+
+.fa:hover{
+    color:#222;
+    cursor:pointer;
+
+}
+path:hover{
+    stroke:#fff;
+    stroke-width:2px;
+}
+text.mayor_Tory {
+    display:none;
+}
+text.mayor_Ford{
+    display:none;
+}
+
+.legendHover{
+    color:#222;
+    position:absolute;
+    left:-100px;
+    top:0px;
+    font-size:20px;
+}
+
+.legendHoverTop{
+    color:#222;
+    position:absolute;
+    left:-150px;
+    top:0px;
+    font-size:20px;
+}
+
+@media (min-width:768px) {
+.container {
+width:100%;
+}
+#main-content{
+     min-height: 100%;
+    height: auto; 
+
+}
+#main-content > .row {
+ overflow-x:scroll;
+     overflow-y:hidden;
+    white-space:nowrap;
+}    
+#main-content > .row [class*="col-lg"], #main-content > .row [class*="col-md"], #main-content > .row [class*="col-sm"] {
+    float:none;
+    display:inline-block;
+    white-space:normal;
+    vertical-align:top;
+}
+}
+  

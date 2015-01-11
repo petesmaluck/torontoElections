@@ -1,0 +1,193 @@
+<html>
+<head>
+<link href="//maxcdn.bootstrapcdn.com/bootstrap/3.3.0/css/bootstrap.min.css" rel="stylesheet">
+<!-- LIBRARIES -->
+<link href="style.css" rel="stylesheet">
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/1.7.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://cdnjs.cloudflare.com/ajax/libs/d3/2.10.0/d3.v2.min.js"></script>
+<script type="text/javascript" src="http://maps.googleapis.com/maps/api/js?sensor=false"></script>
+<script src="http://benpickles.github.io/peity/jquery.peity.min.js"></script>
+<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<!-- VIZ -->
+<script src="viz.js"></script>
+<!-- DATA -->
+<script type="text/javascript" src="subdivisions.js"></script>
+<script type="text/javascript" src="wards.js"></script>
+
+</head>
+<body>
+<div class="loader">
+  <div class="container-fluid"> 
+  <div class="row">
+    <div class="col-sm-12 details">
+      <h1>2014 Toronto <br>Municipal Election</h1>
+      <br>
+      <h4>By Tom Weatherburn and Pete Smaluck</h4>
+      <br>
+            <p>Scroll over the map to view election results <br>and socioeconomic variables for each subdivision.</p>
+            <br>
+      <i class="fa fa-cog fa-spin"></i>
+ 
+    </div>
+  </div>
+  </div>
+</div>
+<!-- Navbar -->
+<nav class="navbar navbar-default navbar-fixed-top" role="navigation">
+  <div class="container-fluid">
+    <div class="navbar-header">
+      <a class="navbar-brand" href="#">2014 Toronto Municipal Election</a>
+    </div>
+  </div>
+</nav>
+<!-- Main container -->
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-12">
+      <!-- MAP -->
+      <div id="map"></div>
+       <!-- SIDEBAR -->
+      <div class="sideBar">
+        <p style="margin:0px 0px 5px">HOW TORONTO VOTED</p>
+        <hr class="tight">
+        <span style="font-size:12px">Scroll over the subdivisions to view <i>percentage</i> of votes.</span>
+        <hr>
+        <span>Total Votes</span>
+        <svg class="cityChart"></svg>
+        <br>
+        <span>Ward: <div class="title"></div></span>
+        <svg class="voteChart"></svg>
+        <br>
+        <span>Subdivision: <div class="ward"></div></span>
+        <svg class="subdivisionChart"></svg>
+     
+
+        
+      </div>
+      <!-- LEGEND -->
+        <div class="legend">
+          <span style="font-size:12px">Percentage of votes</span>
+          <hr  class="tight">
+          <svg id="legendColors"></svg>
+        </div>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-sm-12">
+     <div class="bottomBar"></div>
+    </div>
+  </div>
+
+  <!-- FOOTER -->
+  <div id="footer">
+    <div class="container" id="main-content">
+        <div class="row">
+
+    <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2 categories">
+      <p style="text-align:left">Choose charts</p>
+        <label><input type="checkbox" name="colorCheckbox" value="education" checked> Education</label><br>
+        <label><input type="checkbox" name="colorCheckbox" value="income" checked> Income</label><br>
+        <label><input type="checkbox" name="colorCheckbox" value="occupation" checked> Occupation</label><br>
+        <label><input type="checkbox" name="colorCheckbox" value="transportation"> Transportation to work</label><br>
+        <label><input type="checkbox" name="colorCheckbox" value="religion"> Religion</label><br>
+        <label><input type="checkbox" name="colorCheckbox" value="immigration"> Immigration</label><br>
+        <label><input type="checkbox" name="colorCheckbox" value="visMinorities"> Visible Minorities</label>
+
+    </div>
+    <!-- FOOTER GRAPHS -->
+            <div id="chart1" class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <p>Education</p>
+                <svg id="education"></svg>
+            </div>
+            <div id="chart2" class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <p>Income</p>
+                <svg id="income"></svg>
+            </div>
+            <div id="chart3" class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <p>Occupation</p>
+                <svg id="occupation"></svg>
+            </div>
+            <div id="chart4" class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <p>Mode of transportation to work</p>
+                <svg id="transportation"></svg>
+            </div>
+           <div id="chart5" class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <p>Religion</p>
+                <svg id="religion"></svg>
+            </div>
+            <div id="chart6" class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <p>Immigration</p>
+                  <div id="immigration"></div>
+            </div>
+            <div id="chart7" class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                <p>Visible Minorities</p>
+                <div id="visMinorities"></div>
+            </div>
+        </div>
+
+      </div>
+    </div>
+<!-- GITHUB RIBBON -->
+<a href="https://github.com/petesmaluck/petesmaluck.github.io/tree/master/torontoElection"><img style="position: absolute; top: 0; right: 0; border: 0; z-index: 1000" src="https://camo.githubusercontent.com/a6677b08c955af8400f44c6298f40e7d19cc5b2d/68747470733a2f2f73332e616d617a6f6e6177732e636f6d2f6769746875622f726962626f6e732f666f726b6d655f72696768745f677261795f3664366436642e706e67" alt="Fork me on GitHub" data-canonical-src="https://s3.amazonaws.com/github/ribbons/forkme_right_gray_6d6d6d.png"></a>
+
+
+<script>
+//SOME JQUERY FOR SHOWING AND HIDING DIVS
+ $('#chart4').hide();
+ $('#chart5').hide();
+ $('#chart6').hide();
+ $('#chart7').hide();
+
+//SHOW/HIDE CHARTS
+    $(document).ready(function(){
+        $('input[type="checkbox"]').change(function(){
+            if($(this).attr("value")=="education"){
+                $("#chart1").toggle(this.checked);
+            }
+            if($(this).attr("value")=="income"){
+                $("#chart2").toggle(this.checked);
+            }
+            if($(this).attr("value")=="occupation"){
+                $("#chart3").toggle(this.checked);
+            }
+            if($(this).attr("value")=="transportation"){
+                $("#chart4").toggle(this.checked);
+            }
+            if($(this).attr("value")=="religion"){
+                $("#chart5").toggle(this.checked);
+            }
+            if($(this).attr("value")=="immigration"){
+                $("#chart6").toggle(this.checked);
+            }
+            if($(this).attr("value")=="visMinorities"){
+                $("#chart7").toggle(this.checked);
+            }
+        });
+    });
+
+//LIMIT CHEKCBOXES TO 3
+$('.categories :checkbox').change(function () {
+    var $cs = $(this).closest('.categories').find(':checkbox:checked');
+    if ($cs.length > 3) {
+        this.checked = false;
+    }
+});
+//LOADING SCREEN
+$(window).load(function() {
+  $(".loader").fadeOut("slow");
+})
+
+
+</script>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-49984223-1', 'petesmaluck.com');
+  ga('send', 'pageview');
+
+</script>
+</body>
+</html>
